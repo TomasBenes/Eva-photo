@@ -19,6 +19,7 @@ public class ShoppingCart {
     private Long subPrice;
     @Column(name = "total_price")
     private Long totalPrice;
+    //total price will be probably in DTO
 
     public ShoppingCart(String itemName, Long price, Integer itemCount, Long subPrice, Long totalPrice) {
         this.itemName = itemName;

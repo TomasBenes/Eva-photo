@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eva`s photo shoot</title>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Úvod</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/kontakt">Kontakt</a>
+    <div class="dropdown">
+        <button class="dropbtn">Menu
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/omne">O Mně</a>
+            <a href="/cenik">Ceník</a>
+            <a href="/kosik">Košík</a>
+        </div>
+    </div>
+</div>
+<br>
+<img src="DSC_0036.JPG">
+<article>
+    <p>Eva Benešová</p>
+    <h1>FOTOGRAFIE není pouze o pózování, ale o zachycení přirozené krásy a vašich emocí.</h1>
+    <!-- Hello I am here -->
+    <h2>
+        PÁR SLOV ÚVODEM
+    </h2>
+    <p>
+        <em>
+            Fotky jsou odrazem naší duše, to co a jak fotíme vychází z našich pocitů a je odrazem nás samotných. Proto se snažím odlišit a dívat se na každodenní situace z jiného úhlu pohledu. Ve fotografii se snažím udělat z obyčejných věcí, věci zajímavé, z každodenních starostí věčnou vzpomínku. Fotografie není pouze o pozování, ale o zachycení přirozené krásy a vašich emocí.
+            Fotím srdcem, s úsměvem na rtu a jsem otevřená vašim nápadům.
+            Je pro mě důležité, aby jste se během focení cítili dobře a uvolněně a společně si ho užili.
+        </em>
+    </p>
+</article>
+<!--<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Green Fox Fashion Web Store</h1>
+        </div>
+
+    </div>
+    <div class="row">
+        <form th:action="@{/shoppingplanner/summary}" method="post">
+            <select name="itemName">
+                <option value="0">Select item name</option>
+                <option th:each="itemName : ${nameDistinct}" th:value="${itemName}" th:text="${itemName}"></option>
+            </select>
+            <select name="size">
+                <option value="0">Select size</option>
+                <option th:each="size : ${sizeDistinct}" th:value="${size}" th:text="${size}"></option>
+            </select>
+            <input type="number" name="quantity" id="quantity">
+            <button type="submit">GET TOTAL</button>
+        </form>
+    </div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Item name</th>
+            <th>Manufacturer</th>
+            <th>Category</th>
+            <th>Size</th>
+            <th>Unit price</th>
+        </tr>
+        <tr th:each="cloth:${clothes}">
+            <td th:text="${cloth.itemName}"></td>
+            <td th:text="${cloth.manufacturer}"></td>
+            <td th:text="${cloth.category}"></td>
+            <td th:text="${cloth.size}"></td>
+            <td th:text="${cloth.unitPrice}"></td>
+        </tr>
+    </table>
+</div>-->
+</body>
+</html>
