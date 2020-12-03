@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FEEDBACK</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="navbar">
+    <a href="/">Úvod</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/kontakt">Kontakt</a>
+    <div class="dropdown">
+        <button class="dropbtn">Menu
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="/omne">O Mně</a>
+            <a href="/feedback">Feedback</a>
+            <a href="/cenik">Ceník</a>
+            <a href="/kosik">Košík</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Feedback</h1>
+        </div>
+    </div>
+    <table class="table table-hover table-dark">
+        <tr>
+            <th>Název</th>
+            <th>Koment</th>
+            <th>Jméno a příjmení</th>
+            <th>Hodnocení</th>
+            <th>Datum</th>
+        </tr>
+        <tr th:each="feedback:${feedbacks}">
+            <td th:text="${feedback.title}"></td>
+            <td th:text="${feedback.content}"></td>
+            <td th:text="${feedback.userName}"></td>
+            <td th:text="${feedback.stars}"></td>
+            <td th:text="${feedback.currentDate}"></td>
+        </tr>
+    </table>
+    <div class="row">
+        <div class="col-sm">
+            <h2>Přidat feedback</h2>
+        </div>
+    </div>
+    <div class="row">
+        <form th:action="@{|/add-feedback|}" method="post">
+            <div>
+                <label for="title">Název</label><br>
+                <input required type="text" name="title" id="title"/><br>
+                <label for="content">Koment</label><br>
+                <input required type="text" name="content" id="content"/><br>
+                <label for="userName">Jméno a příjmení</label><br>
+                <input required type="text" name="userName" id="userName"/><br>
+                <label for="stars">Hodnocení</label><br>
+                <input type="number" name="stars" id="stars"/>
+                <label for="currentDate">Datum</label><br>
+                <input id="currentDate" name="currentDate" type="date">
+            </div>
+            <button type="submit" value="Submit">Odeslat</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
