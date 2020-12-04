@@ -1,13 +1,9 @@
 package com.evaphoto.Model;
 
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import javax.print.attribute.standard.DateTimeAtCreation;
-import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 
 @Entity
@@ -17,9 +13,9 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @CreatedDate
-    @Column(name = "current_date")
-    private DateFormat currentDate;
+    @Column(name = "created_on")
+    @CreationTimestamp
+    private LocalDateTime createdOn;
 
     private String title;
     private String content;
@@ -29,12 +25,11 @@ public class Feedback {
     public Feedback() {
     }
 
-    public Feedback(String title, String content, String userName, Float stars, DateFormat currentDate) {
+    public Feedback(String title, String content, String userName, Float stars) {
         this.title = title;
         this.content = content;
         this.userName = userName;
         this.stars = stars;
-        this.currentDate = currentDate;
     }
 
     public Integer getId() {
@@ -45,12 +40,12 @@ public class Feedback {
         this.id = id;
     }
 
-    public DateFormat getCurrentDate() {
-        return currentDate;
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
     }
 
-    public void setCurrentDate(DateFormat currentDate) {
-        this.currentDate = currentDate;
+    public void setCreatedOn(LocalDateTime createdOn) {
+        this.createdOn = createdOn;
     }
 
     public String getTitle() {
