@@ -1,7 +1,9 @@
-body {
+/*body {
     margin: 0;
     font-family: 'Merriweather', serif;
-}
+    background: white;
+    color: black;
+}*/
 
 img {
     width: 100%;
@@ -9,12 +11,20 @@ img {
 
 h1 {
     font-size: 40px;
+    text-align: center;
+    margin: 50px;
 }
 
 h2 {
     font-family: 'Lato', sans-serif;
     color: #999999;
     font-size: 22px;
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
 }
 
 /* hello */
@@ -27,14 +37,15 @@ article {
 p {
     font-size: 18px;
     line-height: 1.9;
+    text-align: center
 }
 
-a {
+/*a {
     font-weight: bold;
     color: black;
-}
+}*/
 
-.navbar {
+/*.navbar {
     overflow: hidden;
     background-color: #333;
 }
@@ -92,17 +103,17 @@ a {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
+}*/
 
 .fa {
-    padding: 5px;
-    font-size: 20px;
-    width: 30px;
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
     text-align: center;
     text-decoration: none;
     margin: 5px 2px;
     border-radius: 50%;
-    float: right;
+    position: fixed;
 }
 
 .fa:hover {
@@ -156,7 +167,7 @@ a {
     opacity: 0.4
 }
 
-body {
+/*body {
     background: white;
     color: black;
 }
@@ -172,7 +183,7 @@ h1 {
 
 p {
     font-size: 1.2rem
-}
+}*/
 
 @media only screen and (max-width: 600px) {
     h1 {
