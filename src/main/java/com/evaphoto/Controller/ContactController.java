@@ -6,6 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,14 +22,13 @@ public class ContactController {
     }
 
     @PostMapping("/kontakt")
-    public String submitEmail (HttpServletRequest request) {
-        String name = request.getParameter("name");
+    public String submitEmail (@RequestParam String name, @RequestParam String email, @RequestParam String subject, @RequestParam String content) {
+        /*String name = request.getParameter("name");HttpServletRequest request
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
-        String content = request.getParameter("content");
-
+        String content = request.getParameter("content");*/
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("evaphotoweb@gmail.com");
+        message.setFrom("tominobenes@gmail.com");
         message.setTo("tomasbenes123@gmail.com");
 
         String mailSubject = name + "odeslal email";
