@@ -3,17 +3,23 @@ package com.evaphoto.Controller;
 import com.evaphoto.Model.Feedback;
 import com.evaphoto.Service.FeedbackService;
 import com.evaphoto.Service.ShoppingCartService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class MainController {
 
     private final ShoppingCartService shoppingCartService;
     private final FeedbackService feedbackService;
+
 
     public MainController(ShoppingCartService shoppingCartService, FeedbackService feedbackService) {
         this.shoppingCartService = shoppingCartService;
@@ -28,11 +34,6 @@ public class MainController {
     @GetMapping("/portfolio")
     public String portfolioPage () {
         return "portfolio";
-    }
-
-    @GetMapping("/kontakt")
-    public String contactPage () {
-        return "kontakt";
     }
 
     @GetMapping("/omne")
