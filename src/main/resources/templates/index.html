@@ -76,7 +76,6 @@
 <article>
     <p>Eva Benešová</p>
     <h1>FOTOGRAFIE není pouze o pózování, ale o zachycení přirozené krásy a vašich emocí.</h1>
-    <!-- Hello I am here -->
     <h2>
         PÁR SLOV ÚVODEM
     </h2>
@@ -88,44 +87,12 @@
         </em>
     </p>
 </article>
-<!--<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <h1>Green Fox Fashion Web Store</h1>
-        </div>
-
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">+420 777 054 174 zavolejte mi</span>
+        <span class="text-muted">Nyklíčkova 192, Opatovice nad Labem stavte se na kafe</span>
+        <span class="text-muted">ebenesova123gmail.com napište mi</span>
     </div>
-    <div class="row">
-        <form th:action="@{/shoppingplanner/summary}" method="post">
-            <select name="itemName">
-                <option value="0">Select item name</option>
-                <option th:each="itemName : ${nameDistinct}" th:value="${itemName}" th:text="${itemName}"></option>
-            </select>
-            <select name="size">
-                <option value="0">Select size</option>
-                <option th:each="size : ${sizeDistinct}" th:value="${size}" th:text="${size}"></option>
-            </select>
-            <input type="number" name="quantity" id="quantity">
-            <button type="submit">GET TOTAL</button>
-        </form>
-    </div>
-
-    <table class="table table-hover">
-        <tr>
-            <th>Item name</th>
-            <th>Manufacturer</th>
-            <th>Category</th>
-            <th>Size</th>
-            <th>Unit price</th>
-        </tr>
-        <tr th:each="cloth:${clothes}">
-            <td th:text="${cloth.itemName}"></td>
-            <td th:text="${cloth.manufacturer}"></td>
-            <td th:text="${cloth.category}"></td>
-            <td th:text="${cloth.size}"></td>
-            <td th:text="${cloth.unitPrice}"></td>
-        </tr>
-    </table>
-</div>-->
+</footer>
 </body>
 </html>
