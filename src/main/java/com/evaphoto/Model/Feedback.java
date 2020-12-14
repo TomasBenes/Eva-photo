@@ -21,14 +21,16 @@ public class Feedback {
     private String content;
     private String userName;
     private Float stars;
+    private String customerSource;
 
     public Feedback() {
     }
 
-    public Feedback(String title, String content, String userName, Float stars) {
+    public Feedback(String title, String content, String userName, String customerSource, Float stars) {
         this.title = title;
         this.content = content;
         this.userName = userName;
+        this.customerSource = customerSource;
         this.stars = stars;
     }
 
@@ -70,6 +72,14 @@ public class Feedback {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getCustomerSource() {
+        return customerSource;
+    }
+
+    public void setCustomerSource(String customerSource) {
+        this.customerSource = customerSource;
     }
 
     public Float getStars() {

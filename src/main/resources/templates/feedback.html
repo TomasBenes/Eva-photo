@@ -106,12 +106,15 @@
         </div>
         <div class="col-12">
             <label for="customerSource" class="form-label">Kde jste se o mne dozvedeli?</label>
-            <select name="customerSource" id="customerSource" class="form-select">
-                <option selected>Choose...</option>
+            <select required name="customerSource" id="customerSource" class="form-select">
+                <option selected>Vyber...</option>
                 <option>Facebook</option>
                 <option>Instagram</option>
-                <option>Facebook</option>
+                <option>Kamarad</option>
+                <option>Pokud jinde prosim napiste kde?:</option>
             </select>
+            <br>
+            <input type="text" name="customerSource" class="form-control">
         </div>
         <div class="col-12">
             <label for="content" class="form-label">Koment</label>
