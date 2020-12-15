@@ -7,22 +7,33 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 @Controller
+@ControllerAdvice
 public class ContactController {
 
     @Autowired
     private JavaMailSender mailSender;
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public String handleErrorExceedsMaxSize() {
+        return "bigAttachment";
+    }
 
     @GetMapping("/kontakt")
     public String contactPage () {
@@ -58,9 +69,7 @@ public class ContactController {
             };
             helper.addAttachment(fileName, source);
         }
-
         this.mailSender.send(message);
-
         return "kontaktMessage";
     }
 }
