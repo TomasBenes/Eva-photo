@@ -30,7 +30,7 @@ public class ContactController {
     }
 
     @PostMapping("/kontakt")
-    public String submitEmail (@RequestParam String name, @RequestParam String email, @RequestParam String subject, @RequestParam String content, @RequestParam MultipartFile attachment) throws MessagingException, UnsupportedEncodingException {
+    public String submitEmail (@RequestParam String name, @RequestParam String email, @RequestParam String subject, @RequestParam String content, @RequestParam String sourceOfCustomer,@RequestParam MultipartFile attachment) throws MessagingException, UnsupportedEncodingException {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -39,6 +39,7 @@ public class ContactController {
         String mailContent = "<p><b>Jmeno odesilatele:</b> " + name + "</p>";
         mailContent += "<p><b>Email odesilatele:</b> " + email + "</p>";
         mailContent += "<p><b>Predmet:</b> " + subject + "</p>";
+        mailContent += "<p><b>Zdroj zakaznika:</b> " + sourceOfCustomer + "</p>";
         mailContent += "<p><b>Obsah:</b> " + content + "</p>";
 
         helper.setFrom("tominobenes@gmail.com", "Eva photo");
