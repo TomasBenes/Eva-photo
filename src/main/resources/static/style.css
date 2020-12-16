@@ -1,6 +1,6 @@
-img {
+/*img {
     width: 100%;
-}
+}*/
 
 h1 {
     font-size: 40px;
@@ -39,6 +39,10 @@ small {
 
 #footerText {
     color: white;
+}
+
+#kontaktText {
+    text-align: center;
 }
 
 .stats-container {

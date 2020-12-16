@@ -36,7 +36,7 @@ public class ContactController {
     }
 
     @PostMapping("/kontakt")
-    public String submitEmail (@RequestParam String name, @RequestParam String email, @RequestParam String subject, @RequestParam String content, @RequestParam String sourceOfCustomer,@RequestParam MultipartFile attachment) throws MessagingException, UnsupportedEncodingException {
+    public String submitEmail (@RequestParam String name, @RequestParam String email, @RequestParam String subject, @RequestParam String content, @RequestParam String sourceOfCustomer,@RequestParam MultipartFile attachment, @RequestParam MultipartFile attachment2, @RequestParam MultipartFile attachment3) throws MessagingException, UnsupportedEncodingException {
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -65,7 +65,6 @@ public class ContactController {
             helper.addAttachment(fileName, source);
         }
 
-/* , @RequestParam MultipartFile attachment2, @RequestParam MultipartFile attachment3
        if (!attachment2.isEmpty()) {
             String fileName2 = StringUtils.cleanPath(attachment2.getOriginalFilename());
 
@@ -88,7 +87,7 @@ public class ContactController {
                 }
             };
             helper.addAttachment(fileName3, source3);
-        }*/
+        }
 
         this.mailSender.send(message);
         return "kontaktMessage";
