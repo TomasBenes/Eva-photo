@@ -61,13 +61,15 @@ small {
     color: crimson;
 }
 
-#zoom:hover {
+.zoom:hover {
     -ms-transform: scale(2.5); /* IE 9 */
     -webkit-transform: scale(2.5); /* Safari 3-8 */
     transform: scale(2.5);
+    position: absolute;
+    z-index: 1;
 }
 
-#zoom {
+.zoom {
     transition: transform .2s;
     width: 200px;
     height: 200px;

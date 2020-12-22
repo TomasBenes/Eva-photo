@@ -48,32 +48,30 @@
     <h3>SVATEBNI FOTOGRAFIE</h3>
     <div class="row">
         <div class="col-12 col-sm-6 col-lg-3">
-            <img id="zoom" src="03070500.JPG" class="w-100" alt="...">
+            <img src="03070500.JPG" class="w-100 zoom" alt="...">
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
-            <img src="DSC_0275.JPG" class="w-100" alt="...">
+            <img src="DSC_0275.JPG" class="w-100 zoom" alt="...">
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
-            <img src="DSC_0381.JPG" class="w-100" alt="...">
+            <img src="DSC_0381.JPG" class="w-100 zoom" alt="...">
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
-            <img src="DSC_0304.JPG" class="w-100" alt="...">
+            <img src="DSC_0304.JPG" class="w-100 zoom" alt="...">
         </div>
+    </div>
+</div>
+<div class="container" style="text-align: center;margin-top: 5em;">
+    <div class="col-xs-12 col-md-3">
+        <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img1"/>
+        <button class="btn btn-primary" onclick="resetImg()">Reset</button>
     </div>
 </div>
 <div class="container" style="text-align: center;margin-top: 5em;">
     <div class="row">
         <div class="col-xs-12 col-md-3">
-            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img1"/>
-            <button onclick="resetImg()">Reset</button>
-        </div>
-        <div class="col-xs-12 col-md-3">
-            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img2"/>
-            <button onclick="resetImg()">Reset</button>
-        </div>
-        <div class="col-xs-12 col-md-3">
-            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img3"/>
-            <button onclick="resetImg()">Reset</button>
+            <img src="DSC_0304.JPG" onclick="enlargeImg1()" id="img2"/>
+            <button class="btn btn-primary" onclick="resetImg1()">Reset</button>
         </div>
     </div>
 </div>
@@ -85,23 +83,21 @@
         img.style.width = "400%";
         img.style.height = "auto";
         img.style.transition = "width 0.5s ease";
-        img1.style.width = "400%";
-        img1.style.height = "auto";
-        img1.style.transition = "width 0.5s ease";
-        img2.style.width = "400%";
-        img2.style.height = "auto";
-        img2.style.transition = "width 0.5s ease";
     }
     function resetImg() {
         img.style.width = "100%";
         img.style.height = "auto";
         img.style.transition = "width 0.5s ease";
+    }
+    function enlargeImg1() {
+        img1.style.width = "400%";
+        img1.style.height = "auto";
+        img1.style.transition = "width 0.5s ease";
+    }
+    function resetImg1() {
         img1.style.width = "100%";
         img1.style.height = "auto";
         img1.style.transition = "width 0.5s ease";
-        img2.style.width = "100%";
-        img2.style.height = "auto";
-        img2.style.transition = "width 0.5s ease";
     }
 </script>
 <footer class="footer mt-auto py-3 bg-dark">
