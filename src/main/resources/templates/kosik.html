@@ -61,7 +61,49 @@
         </div>
     </div>
 </div>
-
+<div class="container" style="text-align: center;margin-top: 5em;">
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img1"/>
+            <button onclick="resetImg()">Reset</button>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img2"/>
+            <button onclick="resetImg()">Reset</button>
+        </div>
+        <div class="col-xs-12 col-md-3">
+            <img src="DSC_0304.JPG" onclick="enlargeImg()" id="img3"/>
+            <button onclick="resetImg()">Reset</button>
+        </div>
+    </div>
+</div>
+<script>
+    img = document.getElementById("img1");
+    img1 = document.getElementById("img2");
+    img2 = document.getElementById("img3");
+    function enlargeImg() {
+        img.style.width = "400%";
+        img.style.height = "auto";
+        img.style.transition = "width 0.5s ease";
+        img1.style.width = "400%";
+        img1.style.height = "auto";
+        img1.style.transition = "width 0.5s ease";
+        img2.style.width = "400%";
+        img2.style.height = "auto";
+        img2.style.transition = "width 0.5s ease";
+    }
+    function resetImg() {
+        img.style.width = "100%";
+        img.style.height = "auto";
+        img.style.transition = "width 0.5s ease";
+        img1.style.width = "100%";
+        img1.style.height = "auto";
+        img1.style.transition = "width 0.5s ease";
+        img2.style.width = "100%";
+        img2.style.height = "auto";
+        img2.style.transition = "width 0.5s ease";
+    }
+</script>
 <footer class="footer mt-auto py-3 bg-dark">
     <div class="container-fluid contact-container">
         <div class="container">
